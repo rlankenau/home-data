@@ -3,6 +3,8 @@
 #define IS_HOMEDATA_REPEATER  (1)
 #define HAS_DHT               (1)
 #define MY_NODE_ID        GARAGE
+#define MY_NODE_NAME      "Garage"
+#define MY_NODE_VERSION   "1.0"
 
 #include <Adafruit_Sensor.h>
 
@@ -51,7 +53,7 @@ bool metric = true;
 
 void presentation()
 {
-  sendSketchInfo("Garage", "1.0");
+  sendSketchInfo(MY_NODE_NAME, MY_NODE_VERSION);
 
 #if HAS_DHT
   present(TEMPERATURE_REPORT, S_TEMP);
