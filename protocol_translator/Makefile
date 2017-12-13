@@ -1,7 +1,7 @@
 CC=gcc
 CFLAGS=-O3
 
-all: parser
+all: home_data_gw_service
 
 install: home_data_gw_service 
 	adduser --quiet --system --group --no-create-home home_data
