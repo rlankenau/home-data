@@ -5,8 +5,8 @@
 [Service]
 	User=home_data
 	Type=simple
-	WorkingDirectory=/usr/local/bin/home_data
-	ExecStart=/usr/local/bin/home_data/parser /dev/ttyACM0 
+	WorkingDirectory=/usr/local/home_data/bin
+	ExecStart=/usr/local/home_data/bin/home_data_gw_service /dev/ttyACM0 
 	Restart=on-failure
 	RestartSec=60s
 	StandardError=journal
