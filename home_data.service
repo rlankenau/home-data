@@ -1,0 +1,17 @@
+[Unit]
+	Description=MySensors to InfluxDB Protocol Translator
+	After=network.target
+
+[Service]
+	User=home_data
+	Type=simple
+	WorkingDirectory=/usr/local/bin/home_data
+	ExecStart=/usr/local/bin/home_data/parser /dev/ttyACM0 
+	Restart=on-failure
+	RestartSec=60s
+	StandardError=journal
+	SyslogIdentifier=home_data
+	KillSignal=SIGINT
+
+[Install]
+	WantedBy=multi-user.target
